@@ -7,6 +7,10 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
     "axios": "^0.21.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.8",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
@@ -17,7 +21,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "nodemon server -e html,js,scss --ignore public --ignore client"
   },
   "eslintConfig": {
     "extends": [
