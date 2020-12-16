@@ -10,8 +10,8 @@ npm install
 
 ## Usage
 
-In one terminal `npm run start`
-In another terminal `npm run server` to start the database
+- In one terminal `npm run start`
+- In another terminal `npm run server` to start the database
 
 ## Authors
 
