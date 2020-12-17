@@ -24,4 +24,3 @@ class HTTPRequests {
 }
 
 module.exports = HTTPRequests
-
