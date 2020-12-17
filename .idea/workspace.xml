@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4289622-73e4-498b-93f1-8f2cdb3b70b4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/models/instruction_model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/net/findInstructions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api_keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api_keys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/findRecipes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/findRecipes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/http_requests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/http_requests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/serialize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/food_model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/food_model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/instruction_model.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/findInstructions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/serialize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/serialize.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +33,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.18.4" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.19.9" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../HCICodes/Games_For_Meetings/DoodleJump" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -78,7 +76,7 @@
       <workItem from="1608053036833" duration="29000" />
       <workItem from="1608056760482" duration="5887000" />
       <workItem from="1608063059909" duration="4637000" />
-      <workItem from="1608177494964" duration="309000" />
+      <workItem from="1608177494964" duration="1805000" />
     </task>
     <servers />
   </component>
