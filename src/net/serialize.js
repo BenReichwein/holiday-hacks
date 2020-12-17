@@ -1,7 +1,7 @@
 const request = require('./http_requests.js');
 const foodModel = require('../models/food_model');
 
-class serialize {
+class Serialize {
     static async get() {
         return await request.get('recipes/complexSearch/?query=pizza')
     }
@@ -23,4 +23,4 @@ class serialize {
     }
 }
 
-module.exports = serialize
+module.exports = Serialize
