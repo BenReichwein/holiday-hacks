@@ -1,15 +1,9 @@
 const request = require('./http_requests.js');
 const foodModel = require('../models/food_model');
 
-<<<<<<< HEAD:src/net/serialize.js
-class Serialize {
+class serialize {
     static async get() {
-        return request.get('recipes/complexSearch/?query=pizza');
-=======
-class findRecipes {
-    async get() {
         return await request.get('recipes/complexSearch/?query=pizza')
->>>>>>> fa40875ee4c9dcdc6ae6dfeacc600da9f0ca0750:src/net/findRecipes.js
     }
 
     static async data() {
@@ -28,10 +22,5 @@ class findRecipes {
         return foodModels;
     }
 }
-<<<<<<< HEAD:src/net/serialize.js
-=======
-new findRecipes().data().then(r=>console.log(r))
-//run this file to see layout of data
->>>>>>> fa40875ee4c9dcdc6ae6dfeacc600da9f0ca0750:src/net/findRecipes.js
 
-module.exports = findRecipes
+module.exports = serialize
