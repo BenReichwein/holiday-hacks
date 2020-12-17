@@ -1,7 +1,7 @@
-const request = require('../net/http_requests.js');
+const request = require('./http_requests.js');
 const foodModel = require('../models/food_model');
 
-class Serialize {
+class findRecipes {
     async get() {
         return await request.get('recipes/complexSearch/?query=pizza')
     }
@@ -22,7 +22,7 @@ class Serialize {
         return foodModels;
     }
 }
-new Serialize().data().then(r=>console.log(r))
+new findRecipes().data().then(r=>console.log(r))
 //run this file to see layout of data
 
-module.exports = Serialize
+module.exports = findRecipes
