@@ -1,6 +1,10 @@
 module.exports = {
     food: function (){
+<<<<<<< HEAD
+        return '82dcf2c72fbe4c4eb58964d820e2430b';
+=======
         return '4a0fd3c610b94a9192d9a2448455f994';
+>>>>>>> fa40875ee4c9dcdc6ae6dfeacc600da9f0ca0750
         //82dcf2c72fbe4c4eb58964d820e2430b
         //6b9ed39aa4184083bd5592d062cf2151
         //6dddf62b15e744be95879a02fb3f57a5
