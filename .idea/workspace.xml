@@ -4,12 +4,9 @@
     <list default="true" id="b4289622-73e4-498b-93f1-8f2cdb3b70b4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api_keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api_keys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Instructions/Instructions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Instructions/Instructions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/food_model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/food_model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/http_requests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/http_requests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/instructions_model.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/net/serialize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/serialize.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +80,8 @@
       <workItem from="1608177494964" duration="2324000" />
       <workItem from="1608228253001" duration="281000" />
       <workItem from="1608237756485" duration="18000" />
-      <workItem from="1608307179676" duration="8530000" />
+      <workItem from="1608307179676" duration="8669000" />
+      <workItem from="1608316247887" duration="939000" />
     </task>
     <servers />
   </component>
