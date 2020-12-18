@@ -17,20 +17,27 @@
     font-size: 24px;
     text-align: center;
     cursor: pointer;
+    padding-top: 2%;
 }
 
 .recipe-img {
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 8px;
+    display: block;
+    margin: auto;
 }
 
 .recipe-instructions {
+    display: flex;
+    justify-content: center;
     background: transparent;
     color: white;
     border: none;
     font-size: 45px;
     padding-bottom: 10px;
+
+
 }
 
 .recipe-instructions:hover {
