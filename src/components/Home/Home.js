@@ -19,18 +19,20 @@ class Home extends Component {
             })
     }
 
-
+ 
     render() {
+        let {food, loading} = this.state
         return (
             <div>
-                {this.state.loading ?
+                {loading ?
                     <p>Loading...</p>
-                    : this.state.food.map((item, index) => {
+                    : food.map((item, index) => {
                         return (
                             <div className={"recipe"} key={index}>
-                                <h1>{this.state.food[index].title}</h1>
+                                <center><h1 className={'recipe-title'}>{food[index].title}</h1></center>
                                 {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                                <img src={this.state.food[index].img}/>
+                                <center><img className={'recipe-img'} src={food[index].img}/></center>
+                                <center><button className={'recipe-instructions'} onClick={()=> this.findInstructions(food[index.id])}><i class="fas fa-book"/></button></center>
                             </div>
                         )
                     })}

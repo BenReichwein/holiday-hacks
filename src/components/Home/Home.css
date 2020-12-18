@@ -1,0 +1,48 @@
+.recipe {
+    background: linear-gradient(90deg, rgb(196, 57, 33) 0%, rgb(240, 84, 72) 100%);;
+    color: whitesmoke;
+    text-align: left;
+    margin: 35px auto; /* 5% from the top, 15% from the bottom and centered */
+    width: 80%; /* Could be more or less, depending on screen size */
+    height: 100%;
+    border-radius: 8px;
+    border-color: #888888;
+    box-shadow: 0 4px 8px 0 rgba(0, 0,
+    0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation: bounceIn ease 1s;
+}
+
+.recipe-title {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.recipe-img {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+}
+
+.recipe-instructions {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 45px;
+    padding-bottom: 10px;
+}
+
+.recipe-instructions:hover {
+    transition: all 0.3s ease-out;
+    font-size: 50px;
+    color: #217947;
+    transition: 250ms;
+}
+
+/* Desktop top view */
+@media screen and (min-width: 900px) {
+    .recipe {
+        width: 500px;
+    }
+}
