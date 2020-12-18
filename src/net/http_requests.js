@@ -1,10 +1,9 @@
-const keys = require('../api_keys');
 const https = require('https');
 
 class HTTPRequests {
-    static get(extension) {
+    static get(url) {
         return new Promise(function (resolve, reject) {
-                https.get(`https://api.spoonacular.com/${extension}&apiKey=${keys.food()}&includeNutrition=true`, (resp) => {
+                https.get(url, (resp) => {
                     let data = '';
 
                     resp.on('data', (chunk) => {
@@ -16,7 +15,7 @@ class HTTPRequests {
                     });
 
                 }).on("error", (err) => {
-                    throw err
+                    reject(err)
                 });
             }
         )
