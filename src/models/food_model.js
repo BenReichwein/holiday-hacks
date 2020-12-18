@@ -4,6 +4,7 @@ class FoodModel{
         this.title = title;
         this.img = img;
         this.imgType = imgType;
+        this.steps = [];
     }
 }
 

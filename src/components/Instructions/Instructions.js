@@ -12,9 +12,8 @@ class Instructions extends Component {
             instructions: [],
             loading: true
         }
-        Serialize.instructionData(`https://api.spoonacular.com/recipes/${this.props.location.item.id}/information?includeNutrition=false&apiKey=${keys.food()}`)
+        Serialize.instructionData(`https://api.spoonacular.com/recipes/${this.props.location.item.id}/analyzedInstructions?includeNutrition=false&apiKey=${keys.food()}`, this.props.location.item)
             .then(r => {
-                console.log(r)
                 this.setState({instructions: r, loading: false})
             })
     }
@@ -26,7 +25,7 @@ class Instructions extends Component {
 
         return (
             <div>
-                {loading ? <p>Loading...</p> : <p>{instructions['dishTypes']}</p>}
+                {loading ? <p>Loading...</p> : <p>{instructions.steps[0]['step']}</p>}
 
             </div>
         )

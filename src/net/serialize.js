@@ -1,6 +1,5 @@
 const request = require('./http_requests.js');
 const foodModel = require('../models/food_model');
-const instructionsModel = require('../models/instructions_model');
 const keys = require('../api_keys');
 
 
@@ -25,14 +24,11 @@ class Serialize {
         return foodModels;
     }
 
-    static async instructionData(url) {
+    static async instructionData(url, model) {
         let data;
         await this.get(url).then(r => data = JSON.parse(r));
-        data = new instructionsModel({
-            dishTypes: data.dishTypes,
-            ingredients: data.extendedIngredients,
-        })
-        return data;
+        model.steps = data[0];
+        return model.steps;
     }
 }
 
