@@ -20,8 +20,9 @@ class Home extends Component {
     }
 
     recipeLoad = () => {
-        Serialize.foodData(`https://api.spoonacular.com/recipes/complexSearch/?query=${this.state.search}&apiKey=${keys.food()}&includeNutrition=false`)
+        Serialize.foodData(`https://api.spoonacular.com/recipes/complexSearch/?query=${this.state.search}&apiKey=${keys.food()}&number=100&includeNutrition=false`)
             .then(r => {
+                console.log(r)
                 this.setState({
                     food: r,
                     loading: false
@@ -39,13 +40,14 @@ class Home extends Component {
     render() {
         let {food, loading} = this.state
         return (
-            <Container fluid style={{marginTop: 50}}>
+            <Container fluid>
+                <Container style={{marginTop: 25, marginBottom: 25}}>
             <input
                     className="search-bar"
-                    style={{width: '50%'}}
                     type="text"
                     placeholder='Search Recipe'
                     onChange={this.recipeSearch} />
+                    </Container>
                 <Jumbotron>
                     <Row>
                         {loading ?
