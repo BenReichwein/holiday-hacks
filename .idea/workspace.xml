@@ -4,10 +4,7 @@
     <list default="true" id="b4289622-73e4-498b-93f1-8f2cdb3b70b4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Instructions/Instructions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Instructions/Instructions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/food_model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/food_model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/instructions_model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/serialize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/serialize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Instructions/Instructions.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Instructions/Instructions.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +78,9 @@
       <workItem from="1608228253001" duration="281000" />
       <workItem from="1608237756485" duration="18000" />
       <workItem from="1608307179676" duration="8669000" />
-      <workItem from="1608316247887" duration="939000" />
+      <workItem from="1608316247887" duration="1122000" />
+      <workItem from="1608323435074" duration="21000" />
+      <workItem from="1608351792836" duration="4637000" />
     </task>
     <servers />
   </component>
