@@ -1,6 +1,5 @@
 const request = require('./http_requests.js');
 const foodModel = require('../models/food_model');
-const keys = require('../api_keys');
 
 
 class Serialize {
@@ -11,7 +10,7 @@ class Serialize {
     static async foodData(url) {
         let foodData = [];
         let foodModels = [];
-        await this.get(`https://api.spoonacular.com/recipes/complexSearch/?query=cake&apiKey=${keys.food()}&includeNutrition=false`).then(r => foodData.push(r))
+        await this.get(url).then(r => foodData.push(r))
         foodData = JSON.parse(foodData[0]);
         foodData['results'].forEach(element => {
             foodModels.push(new foodModel({

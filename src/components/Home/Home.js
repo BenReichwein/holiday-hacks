@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Home.css'
 import {Container, Jumbotron, Row} from "react-bootstrap";
 
+const keys = require('../../api_keys');
 const Serialize = require('../../net/serialize');
 
 class Home extends Component {
@@ -13,8 +14,13 @@ class Home extends Component {
         this.state = {
             food: [],
             loading: true,
+            search: 'christmas'
         }
-        Serialize.foodData()
+        this.recipeLoad();
+    }
+
+    recipeLoad = () => {
+        Serialize.foodData(`https://api.spoonacular.com/recipes/complexSearch/?query=${this.state.search}&apiKey=${keys.food()}&includeNutrition=false`)
             .then(r => {
                 this.setState({
                     food: r,
@@ -23,11 +29,23 @@ class Home extends Component {
             })
     }
 
+    recipeSearch = (e) => {
+        this.setState({
+            search: [e.target.value.toLowerCase()]
+        })
+        this.recipeLoad();
+    }
 
     render() {
         let {food, loading} = this.state
         return (
             <Container fluid style={{marginTop: 50}}>
+            <input
+                    className="search-bar"
+                    style={{width: '50%'}}
+                    type="text"
+                    placeholder='Search Recipe'
+                    onChange={this.recipeSearch} />
                 <Jumbotron>
                     <Row>
                         {loading ?
