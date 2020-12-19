@@ -37,7 +37,7 @@ class Instructions extends Component {
                         <Card className="instructions-card">
                             <h2>{this.props.location.item.title}</h2>
                             <Card.Img variant="top" src={this.props.location.item.img}/>
-                            <p style={{marginTop: 20, marginBottom: 20}} className={'instructions-needed'}><span>Ingredients Needed: <br/> </span>{ingredients.join(" ")}
+                            <p style={{marginTop: 20, marginBottom: 20}} className={'instructions-needed'}><span>Ingredients Needed: <br/> </span>{ingredients.join(" + ")}
                             </p>
                         </Card>
                         <hr/>
