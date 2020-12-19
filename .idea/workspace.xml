@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4289622-73e4-498b-93f1-8f2cdb3b70b4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/ImageSearch/ImageSearch.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ImageSearch/orange.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api_keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api_keys.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ImageSearch/ImageSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ImageSearch/ImageSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavBar/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar/NavBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +18,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -34,6 +39,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.4" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.19.9" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../HCICodes/Games_For_Meetings/DoodleJump" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -83,7 +89,7 @@
       <workItem from="1608351792836" duration="5573000" />
       <workItem from="1608398052890" duration="688000" />
       <workItem from="1608398829213" duration="427000" />
-      <workItem from="1608409146504" duration="1962000" />
+      <workItem from="1608409146504" duration="7690000" />
     </task>
     <servers />
   </component>
