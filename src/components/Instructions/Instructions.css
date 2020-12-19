@@ -7,3 +7,9 @@
 .instructions-needed {
     margin-bottom: 10px;
 }
+
+.instructions-card {
+    width: 70%;
+    margin: 4% auto;
+    padding: 3% 7%;
+}

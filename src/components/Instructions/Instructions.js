@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
-import Serialize from "../../net/serialize";
+import {Container, Jumbotron, Card} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './Instructions.css'
+import Serialize from "../../net/serialize";
 
 const keys = require('../../api_keys');
 
@@ -29,25 +32,35 @@ class Instructions extends Component {
                 }
             }
             return (
-                <div className={'instructions'}>
-                    <p className={'instructions-needed'}><span>Ingredients Needed: </span>{ingredients.join(" ")}</p>
-                    <hr/>
-                    {instructions.steps.map((item, index) => {
-                                return (
-                                    <div key={index}>
-                                        <h5 className={'instructions-steps'}>Step #{index+1}</h5>
-                                        <p className={'instructions-step'}> {instructions.steps[index]['step']}</p>
-                                    </div>
-                                )
+                <Container>
+                    <div className={'instructions'}>
+                        <Card className="instructions-card">
+                            <h2>{this.props.location.item.title}</h2>
+                            <Card.Img variant="top" src={this.props.location.item.img}/>
+                            <p style={{marginTop: 20, marginBottom: 20}} className={'instructions-needed'}><span>Ingredients Needed: <br/> </span>{ingredients.join(" ")}
+                            </p>
+                        </Card>
+                        <hr/>
+                        <Jumbotron>
+                            {instructions.steps.map((item, index) => {
+                                    return (
+                                        <div key={index} style={{marginBottom: 50}}>
+                                            <h5 className={'instructions-steps'}>Step #{index + 1}</h5>
+                                            <p className={'instructions-step'}> {instructions.steps[index]['step']}</p>
+                                        </div>
+                                    )
+                                }
+                            )
                             }
-                        )
-                    }
-                </div>
+                        </Jumbotron>
+                    </div>
+                </Container>
+
             )
         } else {
             return (
                 <div>
-                    <p>Loading...</p>
+                    <p style={{textAlign: "center"}}>Loading...</p>
                 </div>
             )
         }
