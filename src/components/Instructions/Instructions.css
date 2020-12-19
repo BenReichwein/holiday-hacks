@@ -14,3 +14,11 @@
     margin: 4% auto;
     padding: 3% 7%;
 }
+
+.instructions-steps {
+    text-align: left;
+}
+
+.instructions-step {
+    text-align: left;
+}
