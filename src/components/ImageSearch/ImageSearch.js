@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Button, Container, Jumbotron} from "react-bootstrap";
 
 const mobilenet = require('@tensorflow-models/mobilenet')
-const tf = require('@tensorflow/tfjs')
+require('@tensorflow/tfjs')
 
 let net;
 
@@ -44,7 +44,7 @@ class ImageSearch extends Component {
             <Container>
                 <div>
                     {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                    <img style={{marginTop: 50, marginBottom: 50}} crossorigin='anonymous' id={'img'} src={this.state.image}/>
+                    <img style={{marginTop: 50, marginBottom: 50}} crossOrigin='anonymous' id={'img'} src={this.state.image}/>
                     <form style={{marginBottom: 30}}>
                         <input onChange={this.handleChange} id='uploaded' type='file' accept="image/png, image/jpeg"/>
                     </form>
