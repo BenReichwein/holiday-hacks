@@ -71,6 +71,9 @@ class Home extends Component {
                                 }
                             )
                         }
+                        {food.length === 0 && loading === false ?
+                        <p style={{margin: "auto"}}>No Recipes for "{this.state.search}"</p>
+                        : <p></p>}
                     </Row>
                 </Jumbotron>
             </Container>
