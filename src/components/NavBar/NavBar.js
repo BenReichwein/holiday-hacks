@@ -11,11 +11,11 @@ class Navbar extends Component {
                         <a className={'nav-links'} href={'/'}>
                             <i class="fas fa-home"/>
                         </a>
-                        <a className={'nav-links'} href={'/login'}>
-                            <i class="fas fa-user-circle"/>
-                        </a>
                         <a className={'nav-links'} href={'/imagesearch'}>
                             <i className="fas fa-camera-retro"/>
+                        </a>
+                        <a className={'nav-links'} href={'/login'}>
+                            <i class="fas fa-user-circle"/>
                         </a>
                     </li>
                 </ul>

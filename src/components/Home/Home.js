@@ -18,9 +18,10 @@ class Home extends Component {
         }
         this.recipeLoad();
     }
-
     recipeLoad = () => {
-        Serialize.foodData(`https://api.spoonacular.com/recipes/complexSearch/?query=${this.state.search}&apiKey=${keys.food()}&number=100&includeNutrition=false`)
+        if (this.state.search.includes(',')) {
+            this.state.search.replace(' ', '+')
+            Serialize.foodData(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${this.state.search}&apiKey=${keys.food()}&number=100&includeNutrition=false`)
             .then(r => {
                 console.log(r)
                 this.setState({
@@ -28,6 +29,16 @@ class Home extends Component {
                     loading: false
                 });
             })
+        } else {
+            Serialize.foodData(`https://api.spoonacular.com/recipes/complexSearch/?query=${this.state.search}&apiKey=${keys.food()}&number=100&includeNutrition=false`)
+            .then(r => {
+                console.log(r)
+                this.setState({
+                    food: r,
+                    loading: false
+                });
+            })
+        }
     }
 
     recipeSearch = (e) => {
@@ -45,7 +56,7 @@ class Home extends Component {
             <input
                     className="search-bar"
                     type="text"
-                    placeholder='Search Recipe'
+                    placeholder='Search Recipe by word or ingredients like (sugar, flour)'
                     onChange={this.recipeSearch} />
                     </Container>
                 <Jumbotron>
