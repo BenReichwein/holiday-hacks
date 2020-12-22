@@ -24,7 +24,6 @@ class ImageSearch extends Component {
             foodResults: false,
             loading: false,
         }
-
         this.handleChange = this.handleChange.bind(this)
     }
 
@@ -35,12 +34,17 @@ class ImageSearch extends Component {
     }
 
     app = async () => {
-        this.setState({loading: true})
+        if (this.state.image) {
+            this.setState({loading: true})
         const img = document.getElementById('img');
 
         net = await mobilenet.load();
 
         return await net.classify(img);
+        } else {
+            alert('No image uploaded')
+            window.location.reload()
+        }
     }
 
     recipeLoad = () => {
