@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import './Home.css'
 import {Container, Jumbotron, Row} from "react-bootstrap";
 

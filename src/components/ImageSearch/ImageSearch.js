@@ -3,7 +3,6 @@ import {Button, Container, Jumbotron} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import '@tensorflow/tfjs';
 
-require('@tensorflow/tfjs')
 const mobilenet = require('@tensorflow-models/mobilenet')
 const Serialize = require('../../net/serialize');
 const keys = require('../../api_keys');
@@ -60,9 +59,8 @@ class ImageSearch extends Component {
 
 
     render() {
-        let {name, prob} = this.state.result;
+        let {name, prob, loading} = this.state.result;
         let {food, foodResults} = this.state;
-        let loading = this.state.loading;
         return (
             <Container>
                 <div>
