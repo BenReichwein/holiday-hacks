@@ -1,7 +1,6 @@
 const request = require('./http_requests.js');
 const foodModel = require('../models/food_model');
 
-
 class Serialize {
     static async get(url) {
         return request.get(url);

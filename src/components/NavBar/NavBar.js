@@ -9,7 +9,7 @@ class Navbar extends Component {
                 <ul className={'nav-menu'}>
                     <li>
                         <a className={'nav-links'} href={'/'}>
-                            <i class="fas fa-home"/>
+                            <i className="fas fa-home"/>
                         </a>
                         <a className={'nav-links'} href={'/imagesearch'}>
                             <i className="fas fa-camera-retro"/>
