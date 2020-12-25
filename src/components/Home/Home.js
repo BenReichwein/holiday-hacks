@@ -22,7 +22,6 @@ class Home extends Component {
             this.state.search.replace(' ', '+')
             Serialize.foodData(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${this.state.search}&apiKey=${keys.food()}&number=100&includeNutrition=false`)
             .then(r => {
-                console.log(r)
                 this.setState({
                     food: r,
                     loading: false
@@ -31,7 +30,6 @@ class Home extends Component {
         } else {
             Serialize.foodData(`https://api.spoonacular.com/recipes/complexSearch/?query=${this.state.search}&apiKey=${keys.food()}&number=100&includeNutrition=false`)
             .then(r => {
-                console.log(r)
                 this.setState({
                     food: r,
                     loading: false
@@ -65,16 +63,10 @@ class Home extends Component {
                             : food.map((item, index) => {
                                     return (
                                         <div className={"recipe"} key={index}>
-                                            <h1 className={'recipe-title'}>{item.title}</h1>
-                                            {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                                            <img className={'recipe-img'} src={item.img}/>
-                                            <Link
-                                                className={'recipe-instructions'}
-                                                to={{
-                                                    pathname: '/instructions',
-                                                    item: item,
-                                                }}>
-                                                <i className="fas fa-book"/>
+                                            <Link to={{pathname: '/instructions', item: item,}}>
+                                                <h1 className={'recipe-title'}>{item.title}</h1>
+                                                {/* eslint-disable-next-line jsx-a11y/alt-text */}
+                                                <img className={'recipe-img'} src={item.img}/>
                                             </Link>
                                         </div>
                                     )
