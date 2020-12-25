@@ -49,6 +49,8 @@
 
 .search-bar {
     border-radius: 8px;
+    width: 80%;
+    margin: auto;
 }
 
 /* Desktop top view */
