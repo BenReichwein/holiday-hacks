@@ -3,6 +3,7 @@ import {Container, Jumbotron} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import '@tensorflow/tfjs';
 import './ImageSearch.css'
+import '../Home/Home.css'
 
 const mobilenet = require('@tensorflow-models/mobilenet')
 const Serialize = require('../../net/serialize');
@@ -94,9 +95,11 @@ class ImageSearch extends Component {
                                     food.map((item, index) => {
                                             return (
                                                 <div className={"recipe"} key={index}>
-                                                    <Link to={{pathname: '/instructions', item: item}}>
-                                                        <img className={'recipe-img'} src={item.img} alt={item.title} />
-                                                        <h1 className={'recipe-title'}>{item.title}</h1>
+                                                    <Link to={{pathname: '/instructions', item: item,}}>
+                                                    <h1 className={'recipe-title'}>{item.title}</h1>
+                                                        <div className='gradient'>
+                                                            <img className={'recipe-img'} src={item.img} alt={item.title}/>
+                                                        </div>
                                                     </Link>
                                                 </div>
                                             )
