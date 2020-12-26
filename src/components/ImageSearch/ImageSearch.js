@@ -72,6 +72,7 @@ class ImageSearch extends Component {
                     {/* eslint-disable-next-line jsx-a11y/alt-text */}
                     <img style={{border: this.state.display}} className='image-upload' crossOrigin='anonymous' id={'img'} src={this.state.image}/>
                     <h1 className='image-search-title'>SEARCH WITH AN IMAGE</h1>
+                    <h3 className='image-search-title'>Upload or drag an image into the box below.</h3>
                     <form className='form' style={{marginBottom: 30}}>
                         <div className="image-upload">
                         <label for="uploaded">
