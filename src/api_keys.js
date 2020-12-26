@@ -1,6 +1,6 @@
 module.exports = {
     food: function (){
-        return 'cf21058a45c947fd9a799f764fc87eae';
+        return 'd1c8dbd0de3f45a7a85910d0c75ae55c';
         //82dcf2c72fbe4c4eb58964d820e2430b
         //6b9ed39aa4184083bd5592d062cf2151
         //6dddf62b15e744be95879a02fb3f57a5

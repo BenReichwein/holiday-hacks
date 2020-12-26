@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Home.css'
-import {Container, Jumbotron, Row} from "react-bootstrap";
+import {Container, Jumbotron, Row, Col} from "react-bootstrap";
 
 const keys = require('../../api_keys');
 const Serialize = require('../../net/serialize');
@@ -17,24 +17,25 @@ class Home extends Component {
         }
         this.recipeLoad();
     }
+
     recipeLoad = () => {
         if (this.state.search.includes(',')) {
             this.state.search.replace(' ', '+')
             Serialize.foodData(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${this.state.search}&apiKey=${keys.food()}&number=500&includeNutrition=false`)
-            .then(r => {
-                this.setState({
-                    food: r,
-                    loading: false
-                });
-            })
+                .then(r => {
+                    this.setState({
+                        food: r,
+                        loading: false
+                    });
+                })
         } else {
             Serialize.foodData(`https://api.spoonacular.com/recipes/complexSearch/?query=${this.state.search}&apiKey=${keys.food()}&number=500&includeNutrition=false`)
-            .then(r => {
-                this.setState({
-                    food: r,
-                    loading: false
-                });
-            })
+                .then(r => {
+                    this.setState({
+                        food: r,
+                        loading: false
+                    });
+                })
         }
     }
 
@@ -52,12 +53,12 @@ class Home extends Component {
             <Container fluid>
                 <h1 className='title'>RECIPES</h1>
                 <Container style={{marginTop: '1rem', marginBottom: 25}}>
-            <input
-                    className="search-bar"
-                    type="text"
-                    placeholder='   Search Recipe by word or ingredients like (sugar, flour)            🔍'
-                    onChange={this.recipeSearch} />
-                    </Container>
+                    <input
+                        className="search-bar"
+                        type="text"
+                        placeholder='   Search Recipe by word or ingredients like (sugar, flour)            🔍'
+                        onChange={this.recipeSearch}/>
+                </Container>
                 <Jumbotron>
                     <Row>
                         {loading ?
@@ -67,21 +68,24 @@ class Home extends Component {
 
                             : food.map((item, index) => {
                                     return (
-                                        <div className={"recipe"} key={index}>
-                                            <Link to={{pathname: '/instructions', item: item,}}>
-                                            <h1 className={'recipe-title'}>{item.title}</h1>
-                                                <div className='gradient'>
-                                                    <img className={'recipe-img'} src={item.img} alt={item.title}/>
-                                                </div>
-                                            </Link>
-                                        </div>
+                                        <Col sm="3">
+                                            <div className={"recipe"} key={index}>
+                                                <Link to={{pathname: '/instructions', item: item,}}>
+                                                    <h1 className={'recipe-title'}>{item.title}</h1>
+                                                    <div className='gradient'>
+                                                        <img className={'recipe-img'} src={item.img} alt={item.title}/>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                        </Col>
+
                                     )
                                 }
                             )
                         }
                         {food.length === 0 && loading === false ?
-                        <p style={{margin: "auto"}}>No Recipes for {this.state.search}</p>
-                        : <p></p>}
+                            <p style={{margin: "auto"}}>No Recipes for {this.state.search}</p>
+                            : <p></p>}
                     </Row>
                 </Jumbotron>
             </Container>
