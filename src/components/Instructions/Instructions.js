@@ -28,7 +28,7 @@ class Instructions extends Component {
         if (loading === false) {
             for (let i = 0; i < instructions.steps.length; i++) {
                 for (let x = 0; x < instructions.steps[i].ingredients.length; x++) {
-                    this.state.ingredients.push(instructions.steps[i].ingredients[x].name + ',')
+                    this.state.ingredients.push(instructions.steps[i].ingredients[x].name + (instructions.steps.length-1 === i && instructions.steps[i].ingredients.length -1 === x ? '' : ' +'))
                 }
             }
             return (
@@ -59,7 +59,7 @@ class Instructions extends Component {
             )
         } else {
             return (
-                <div class="lds-dual-ring"></div>
+                <div class="lds-dual-ring"/>
             )
         }
     }
