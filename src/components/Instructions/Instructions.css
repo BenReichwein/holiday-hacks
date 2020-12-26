@@ -1,27 +1,66 @@
-.instructions {
-    width: 80%;
-    margin: auto;
+i.fas.fa-long-arrow-alt-left {
+    cursor: pointer;
+    margin-left: -3rem;
+    margin-bottom: 1rem;
+}
+
+.directions-container {
+    transform: scale(0.85);
+}
+
+img.card-img-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-bottom: -8rem;
+    position: absolute;
+    left: -6%;
+    z-index: -1;
+}
+
+.recipe-directions {
+    border: 5px solid #285B52;
+    border-radius: 10px;
+    background-color: white;
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4rem;
+    position: absolute;
+    z-index: 1;
+    margin-top: 40rem;
+}
+
+.directions-title {
+    color: #285B52;
+    font-size: 36px;
     text-align: center;
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    margin-top: 4rem;
 }
 
 .instructions-needed {
-    margin-bottom: 10px;
-}
-
-.instructions-card {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    width: 70%;
-    margin: 4% auto;
-    padding: 3% 7%;
+    color: #285B52;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Open Sans';
+    margin-left: 5rem;
+    margin-right: 5rem;
 }
 
 .instructions-steps {
-    text-align: left;
+    color: #59B49B;
 }
 
-.instructions-step {
-    text-align: left;
+.steps {
+    margin-left: 2rem;
+    margin-right: 6rem;
 }
+
 
 .lds-dual-ring {
     box-sizing: border-box;

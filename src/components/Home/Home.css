@@ -20,6 +20,10 @@ a:hover {
   margin-bottom: 2rem;
 }
 
+.jumbotron {
+  padding: 1rem 2rem;
+}
+
 .recipe-title {
   z-index: 999;
   color: #285B52;
@@ -31,7 +35,7 @@ a:hover {
   text-align: center;
   font-family: 'Oswald';
   text-transform: uppercase;
-  margin-top: -1rem;
+  margin-top: 1rem;
 }
 
 .gradient {
