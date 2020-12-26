@@ -33,6 +33,15 @@ class ImageSearch extends Component {
             image: URL.createObjectURL(event.target.files[0]),
             display: '5px solid #285B52'
         })
+        this.app().then(value => {
+            this.setState({
+                loading: false,
+                result: {'name': value[0]['className'], 'prob': value[0]['probability']},
+                search: value[0]['className'],
+            })
+            this.recipeLoad();
+        })
+
     }
 
     app = async () => {
@@ -40,6 +49,7 @@ class ImageSearch extends Component {
         const img = document.getElementById('img');
 
         net = await mobilenet.load();
+
         return await net.classify(img);
     }
 
@@ -52,21 +62,6 @@ class ImageSearch extends Component {
                 });
             })
     }
-
-    componentDidUpdate() {
-        if (this.state.image !== null || "") {
-            this.app().then(value => {
-                this.setState({
-                    loading: false, 
-                    result: {'name': value[0]['className'], 'prob': value[0]['probability']},
-                    search: value[0]['className'],
-                    })
-                    this.recipeLoad();
-            })
-            this.setState({image: null})
-        }
-    }
-
 
     render() {
         let {name, prob, loading} = this.state.result;
@@ -89,7 +84,7 @@ class ImageSearch extends Component {
                                 <h5 className='image-search-title'>{prob == null ? null : `Confidence: ${prob.toFixed(2)*100}%`}</h5>
                             </div>
                         }
-                        {foodResults === true ? 
+                        {foodResults === true ?
                             food.map((item, index) => {
                                     return (
                                         <div className={"recipe"} key={index}>
