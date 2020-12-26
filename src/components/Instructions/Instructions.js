@@ -28,7 +28,7 @@ class Instructions extends Component {
         if (loading === false) {
             for (let i = 0; i < instructions.steps.length; i++) {
                 for (let x = 0; x < instructions.steps[i].ingredients.length; x++) {
-                    this.state.ingredients.push(instructions.steps[i].ingredients[x].name + ',')
+                    this.state.ingredients.push(instructions.steps[i].ingredients[x].name + (instructions.steps.length - 1 === i && instructions.steps[i].ingredients.length - 1 === x ? '' : ' +'))
                 }
             }
             return (
@@ -37,7 +37,8 @@ class Instructions extends Component {
                         <Card className="instructions-card">
                             <h2>{this.props.location.item.title}</h2>
                             <Card.Img variant="top" src={this.props.location.item.img}/>
-                            <p style={{marginTop: 20, marginBottom: 20}} className={'instructions-needed'}><b>Ingredients Needed: <br/> </b>{ingredients.join(" ")}
+                            <p style={{marginTop: 20, marginBottom: 20}} className={'instructions-needed'}><b>Ingredients
+                                Needed: <br/> </b>{ingredients.join(" ")}
                             </p>
                         </Card>
                         <hr/>
@@ -45,7 +46,9 @@ class Instructions extends Component {
                             {instructions.steps.map((item, index) => {
                                     return (
                                         <div key={index} style={{marginBottom: 50}}>
-                                            <h5 className={'instructions-steps'}><i style={{color:'#217947'}} class="fas fa-check-circle"/> <b>Step <span style={{color:'#EA4630'}}>#{index + 1}</span></b></h5>
+                                            <h5 className={'instructions-steps'}><i style={{color: '#217947'}}
+                                                                                    class="fas fa-check-circle"/>
+                                                <b>Step <span style={{color: '#EA4630'}}>#{index + 1}</span></b></h5>
                                             <p className={'instructions-step'}> {instructions.steps[index]['step']}</p>
                                         </div>
                                     )
@@ -57,11 +60,12 @@ class Instructions extends Component {
                 </Container>
 
             )
-        } else {
-            return (
-                <div class="lds-dual-ring"></div>
-            )
         }
+        return (
+            <div style={{display: "flex", justifyContent: "center", marginTop: 50}}>
+                <div className="lds-dual-ring"/>
+            </div>
+        )
     }
 
 }

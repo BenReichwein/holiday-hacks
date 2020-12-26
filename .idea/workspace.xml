@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4289622-73e4-498b-93f1-8f2cdb3b70b4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api_keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api_keys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ImageSearch/ImageSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ImageSearch/ImageSearch.js" afterDir="false" />
-    </list>
+    <list default="true" id="b4289622-73e4-498b-93f1-8f2cdb3b70b4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,6 +84,8 @@
       <workItem from="1608409146504" duration="9400000" />
       <workItem from="1608420410287" duration="104000" />
       <workItem from="1608429610760" duration="1891000" />
+      <workItem from="1609001459685" duration="1980000" />
+      <workItem from="1609003960790" duration="4905000" />
     </task>
     <servers />
   </component>

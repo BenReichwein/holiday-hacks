@@ -31,8 +31,17 @@ class ImageSearch extends Component {
     handleChange(event) {
         this.setState({
             image: URL.createObjectURL(event.target.files[0]),
-            display: '5px solid #285B52'
+            display: '5px solid #285B52',
         })
+        this.app().then(value => {
+            this.setState({
+                loading: false,
+                result: {'name': value[0]['className'], 'prob': value[0]['probability']},
+                search: value[0]['className'],
+            })
+            this.recipeLoad();
+        })
+
     }
 
     app = async () => {
@@ -53,24 +62,10 @@ class ImageSearch extends Component {
             })
     }
 
-    componentDidUpdate() {
-        if (this.state.image !== null || "") {
-            this.app().then(value => {
-                this.setState({
-                    loading: false, 
-                    result: {'name': value[0]['className'], 'prob': value[0]['probability']},
-                    search: value[0]['className'],
-                    })
-                    this.recipeLoad();
-            })
-            this.setState({image: null})
-        }
-    }
-
-
     render() {
-        let {name, prob, loading} = this.state.result;
-        let {food, foodResults} = this.state;
+        let {name, prob} = this.state.result;
+        let {food, foodResults, loading} = this.state;
+        console.log(prob)
         return (
             <Container>
                 <div className='container'>
@@ -78,30 +73,37 @@ class ImageSearch extends Component {
                     <img style={{border: this.state.display}} className='image-upload' crossOrigin='anonymous' id={'img'} src={this.state.image}/>
                     <h1 className='image-search-title'>SEARCH WITH AN IMAGE</h1>
                     <form className='form' style={{marginBottom: 30}}>
+                        <div className="image-upload">
+                        <label for="uploaded">
+                            <i id='upload-image' className="fas fa-upload"></i>
+                        </label>
                         <input className='upload-file' onChange={this.handleChange} id='uploaded' type='file' accept="image/png, image/jpeg"/>
+                        </div>                        
                     </form>
-                    <Jumbotron style={{'marginTop': 0, padding: 0, display: 'block'}}>
+                    <Jumbotron style={{padding: 10}}>
                         {loading ?
-                            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                            <div style={{display: "flex", justifyContent: "center"}}>
+                                <div className="lds-ring"/>
+                            </div>
                             :
                             <div className='container'>
                                 <h5 className='image-search-title'>{name == null ? null : `Name: ${name.toUpperCase()}`}</h5>
-                                <h5 className='image-search-title'>{prob == null ? null : `Confidence: ${prob.toFixed(2)*100}%`}</h5>
+                                <h5 className='image-search-title'>{prob == null ? null : `Confidence: ${(prob * 100).toFixed(2)}%`}</h5>
+                                {foodResults === true ?
+                                    food.map((item, index) => {
+                                            return (
+                                                <div className={"recipe"} key={index}>
+                                                    <Link to={{pathname: '/instructions', item: item}}>
+                                                        <img className={'recipe-img'} src={item.img} alt={item.title} />
+                                                        <h1 className={'recipe-title'}>{item.title}</h1>
+                                                    </Link>
+                                                </div>
+                                            )
+                                        }
+                                    )
+                                    : <br />}
                             </div>
                         }
-                        {foodResults === true ? 
-                            food.map((item, index) => {
-                                    return (
-                                        <div className={"recipe"} key={index}>
-                                            <Link to={{pathname: '/instructions', item: item}}>
-                                            <img className={'recipe-img'} src={item.img} alt={item.title} />
-                                            <h1 className={'recipe-title'}>{item.title}</h1>
-                                            </Link>
-                                        </div>
-                                    )
-                                }
-                            )
-                        : <br />}
                     </Jumbotron>
                 </div>
             </Container>

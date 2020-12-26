@@ -20,7 +20,7 @@ class Home extends Component {
     recipeLoad = () => {
         if (this.state.search.includes(',')) {
             this.state.search.replace(' ', '+')
-            Serialize.foodData(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${this.state.search}&apiKey=${keys.food()}&number=100&includeNutrition=false`)
+            Serialize.foodData(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${this.state.search}&apiKey=${keys.food()}&number=500&includeNutrition=false`)
             .then(r => {
                 this.setState({
                     food: r,
@@ -28,7 +28,7 @@ class Home extends Component {
                 });
             })
         } else {
-            Serialize.foodData(`https://api.spoonacular.com/recipes/complexSearch/?query=${this.state.search}&apiKey=${keys.food()}&number=100&includeNutrition=false`)
+            Serialize.foodData(`https://api.spoonacular.com/recipes/complexSearch/?query=${this.state.search}&apiKey=${keys.food()}&number=500&includeNutrition=false`)
             .then(r => {
                 this.setState({
                     food: r,
@@ -40,7 +40,8 @@ class Home extends Component {
 
     recipeSearch = (e) => {
         this.setState({
-            search: [e.target.value.toLowerCase()]
+            search: [e.target.value.toLowerCase()],
+            loading: true,
         })
         this.recipeLoad();
     }
@@ -60,7 +61,10 @@ class Home extends Component {
                 <Jumbotron>
                     <Row>
                         {loading ?
-                            <div className="lds-dual-ring"></div>
+                            <div style={{margin: "auto"}}>
+                                <div className="lds-dual-ring"/>
+                            </div>
+
                             : food.map((item, index) => {
                                     return (
                                         <div className={"recipe"} key={index}>
