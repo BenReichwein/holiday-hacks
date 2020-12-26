@@ -1,8 +1,13 @@
 .recipe {
   margin: 30px 30px 30px 30px;
-  display: flex;
-  justify-content: center;
-  align-items: space-around;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.recipe-title:hover {
+  color: #59B49B;
 }
 
 .row {
@@ -11,6 +16,30 @@
   margin-right: -15px;
   margin-left: 100px;
 }
+
+.gradient {
+  position:relative;
+  display:inline-block;
+}
+
+.gradient::after {
+  content:'';
+  position:absolute;
+  left:0; top:0;
+  width:100%; height:100%;
+  display:inline-block;
+  background: linear-gradient(to top, #285B52, rgb(40 91 82 / 50%), transparent, transparent);
+}
+
+.gradient:hover:after{
+  background-color:rgb(40 91 82 / 35%);
+  transition: .3s;
+}
+
+.gradient img {
+  display: block;
+}
+
 .jumbotron {
   margin-top: 0;
   padding: 0;
@@ -25,7 +54,8 @@
 }
 
 .recipe-title {
-  color:#fff;
+  z-index: 999;
+  color: #285B52;
   font-size: 22px;
   white-space: nowrap; 
   max-width: 328px;
@@ -34,12 +64,13 @@
   text-align: center;
   font-family: 'Oswald';
   text-transform: uppercase;
-  background-color: #285B52;
-  height: 2rem;
+  margin-top: -2rem;
 }
 
 .recipe-img {
+
   border: 8px solid #285B52;
+  z-index: -999;
 }
 
 .recipe-instructions {

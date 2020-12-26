@@ -65,8 +65,10 @@ class Home extends Component {
                                     return (
                                         <div className={"recipe"} key={index}>
                                             <Link to={{pathname: '/instructions', item: item,}}>
-                                                <img className={'recipe-img'} src={item.img} alt={item.title}/>
-                                                <h1 className={'recipe-title'}>{item.title}</h1>
+                                            <h1 className={'recipe-title'}>{item.title}</h1>
+                                                <div className='gradient'>
+                                                    <img className={'recipe-img'} src={item.img} alt={item.title}/>
+                                                </div>
                                             </Link>
                                         </div>
                                     )
