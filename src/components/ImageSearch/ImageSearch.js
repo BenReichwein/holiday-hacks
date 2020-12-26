@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Button, Container, Jumbotron} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import '@tensorflow/tfjs';
+import './ImageSearch.css'
 
 const mobilenet = require('@tensorflow-models/mobilenet')
 const Serialize = require('../../net/serialize');
@@ -22,13 +23,15 @@ class ImageSearch extends Component {
             search: '',
             foodResults: false,
             loading: false,
+            display: ''
         }
         this.handleChange = this.handleChange.bind(this)
     }
 
     handleChange(event) {
         this.setState({
-            image: URL.createObjectURL(event.target.files[0])
+            image: URL.createObjectURL(event.target.files[0]),
+            display: '5px solid #285B52'
         })
     }
 
@@ -41,7 +44,7 @@ class ImageSearch extends Component {
 
         return await net.classify(img);
         } else {
-            alert('No image uploaded')
+            alert('Upload an image before clicking search')
             window.location.reload()
         }
     }
@@ -49,7 +52,6 @@ class ImageSearch extends Component {
     recipeLoad = () => {
         Serialize.foodData(`https://api.spoonacular.com/recipes/complexSearch/?query=${this.state.search}&apiKey=${keys.food()}&number=100&includeNutrition=false`)
             .then(r => {
-                console.log(r)
                 this.setState({
                     food: r,
                     foodResults: true,
@@ -63,50 +65,48 @@ class ImageSearch extends Component {
         let {food, foodResults} = this.state;
         return (
             <Container>
-                <div>
+                <div className='container'>
                     {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                    <img style={{marginTop: 50, marginBottom: 50}} crossOrigin='anonymous' id={'img'} src={this.state.image}/>
-                    <form style={{marginBottom: 30}}>
-                        <input onChange={this.handleChange} id='uploaded' type='file' accept="image/png, image/jpeg"/>
+                    <img style={{border: this.state.display}} className='image-upload' crossOrigin='anonymous' id={'img'} src={this.state.image}/>
+                    <h1 className='image-search-title'>SEARCH WITH AN IMAGE</h1>
+                    <form className='form' style={{marginBottom: 30}}>
+                        <input className='upload-file' onChange={this.handleChange} id='uploaded' type='file' accept="image/png, image/jpeg"/>
                     </form>
-                    <Button size="lg" block onClick={() => this.app().then(value => {
-                        this.setState({
-                            loading: false, 
-                            result: {'name': value[0]['className'], 'prob': value[0]['probability']},
-                            search: value[0]['className'],
-                            })
-                            this.recipeLoad();
-                    })}
-                            variant="primary">Search</Button>
-                    <Jumbotron style={{'marginTop': 50}}>
+                    <div className='button'>
+                        <Button size="lg" style={{width: '50%'}} block onClick={() => this.app().then(value => {
+                            this.setState({
+                                loading: false, 
+                                result: {'name': value[0]['className'], 'prob': value[0]['probability']},
+                                search: value[0]['className'],
+                                })
+                                this.recipeLoad();
+                        })}
+                                variant="primary">
+                            Upload
+                        </Button>
+                    </div>
+                    <Jumbotron style={{'marginTop': 0, padding: 0, display: 'block'}}>
                         {loading ?
-                            <p>Loading...</p>
+                            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
                             :
-                            <div>
-                                <p>{name == null ? null : `Name: ${name}`}</p>
-                                <p>{prob == null ? null : `Confidence: ${prob.toFixed(3)*100}%`}</p>
+                            <div className='container'>
+                                <h5 className='image-search-title'>{name == null ? null : `Name: ${name.toUpperCase()}`}</h5>
+                                <h5 className='image-search-title'>{prob == null ? null : `Confidence: ${prob.toFixed(2)*100}%`}</h5>
                             </div>
                         }
                         {foodResults === true ? 
                             food.map((item, index) => {
                                     return (
                                         <div className={"recipe"} key={index}>
+                                            <Link to={{pathname: '/instructions', item: item}}>
+                                            <img className={'recipe-img'} src={item.img} alt={item.title} />
                                             <h1 className={'recipe-title'}>{item.title}</h1>
-                                            {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                                            <img className={'recipe-img'} src={item.img}/>
-                                            <Link
-                                                className={'recipe-instructions'}
-                                                to={{
-                                                    pathname: '/instructions',
-                                                    item: item,
-                                                }}>
-                                                <i className="fas fa-book"/>
                                             </Link>
                                         </div>
                                     )
                                 }
                             )
-                        : <p></p>}
+                        : <br />}
                     </Jumbotron>
                 </div>
             </Container>

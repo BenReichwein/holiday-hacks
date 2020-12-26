@@ -37,7 +37,7 @@ class Instructions extends Component {
                         <Card className="instructions-card">
                             <h2>{this.props.location.item.title}</h2>
                             <Card.Img variant="top" src={this.props.location.item.img}/>
-                            <p style={{marginTop: 20, marginBottom: 20}} className={'instructions-needed'}><b>Ingredients Needed: <br/> </b>{ingredients.join(" + ")}
+                            <p style={{marginTop: 20, marginBottom: 20}} className={'instructions-needed'}><b>Ingredients Needed: <br/> </b>{ingredients.join(" ")}
                             </p>
                         </Card>
                         <hr/>
@@ -59,9 +59,7 @@ class Instructions extends Component {
             )
         } else {
             return (
-                <div>
-                    <p style={{textAlign: "center"}}>Loading...</p>
-                </div>
+                <div class="lds-dual-ring"></div>
             )
         }
     }
