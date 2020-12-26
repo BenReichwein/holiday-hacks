@@ -23,11 +23,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server": "nodemon server -e html,js,scss --ignore public --ignore client"
+    "start": "react-scripts start"
   },
   "eslintConfig": {
     "extends": [
