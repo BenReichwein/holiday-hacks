@@ -49,7 +49,6 @@ class ImageSearch extends Component {
         const img = document.getElementById('img');
 
         net = await mobilenet.load();
-
         return await net.classify(img);
     }
 
@@ -64,8 +63,9 @@ class ImageSearch extends Component {
     }
 
     render() {
-        let {name, prob, loading} = this.state.result;
-        let {food, foodResults} = this.state;
+        let {name, prob} = this.state.result;
+        let {food, foodResults, loading} = this.state;
+        console.log(loading)
         return (
             <Container>
                 <div className='container'>
