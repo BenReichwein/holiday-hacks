@@ -60,7 +60,10 @@ class Home extends Component {
                 <Jumbotron>
                     <Row>
                         {loading ?
-                            <div className="lds-dual-ring"></div>
+                            <div style={{margin: "auto"}}>
+                                <div className="lds-dual-ring"/>
+                            </div>
+
                             : food.map((item, index) => {
                                     return (
                                         <div className={"recipe"} key={index}>

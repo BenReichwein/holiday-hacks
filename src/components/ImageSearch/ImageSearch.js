@@ -31,7 +31,7 @@ class ImageSearch extends Component {
     handleChange(event) {
         this.setState({
             image: URL.createObjectURL(event.target.files[0]),
-            display: '5px solid #285B52'
+            display: '5px solid #285B52',
         })
         this.app().then(value => {
             this.setState({
@@ -65,7 +65,6 @@ class ImageSearch extends Component {
     render() {
         let {name, prob} = this.state.result;
         let {food, foodResults, loading} = this.state;
-        console.log(loading)
         return (
             <Container>
                 <div className='container'>
@@ -75,28 +74,30 @@ class ImageSearch extends Component {
                     <form className='form' style={{marginBottom: 30}}>
                         <input className='upload-file' onChange={this.handleChange} id='uploaded' type='file' accept="image/png, image/jpeg"/>
                     </form>
-                    <Jumbotron style={{'marginTop': 0, padding: 0, display: 'block'}}>
+                    <Jumbotron style={{padding: 10}}>
                         {loading ?
-                            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                            <div style={{display: "flex", justifyContent: "center"}}>
+                                <div className="lds-ring"/>
+                            </div>
                             :
                             <div className='container'>
                                 <h5 className='image-search-title'>{name == null ? null : `Name: ${name.toUpperCase()}`}</h5>
                                 <h5 className='image-search-title'>{prob == null ? null : `Confidence: ${prob.toFixed(2)*100}%`}</h5>
+                                {foodResults === true ?
+                                    food.map((item, index) => {
+                                            return (
+                                                <div className={"recipe"} key={index}>
+                                                    <Link to={{pathname: '/instructions', item: item}}>
+                                                        <img className={'recipe-img'} src={item.img} alt={item.title} />
+                                                        <h1 className={'recipe-title'}>{item.title}</h1>
+                                                    </Link>
+                                                </div>
+                                            )
+                                        }
+                                    )
+                                    : <br />}
                             </div>
                         }
-                        {foodResults === true ?
-                            food.map((item, index) => {
-                                    return (
-                                        <div className={"recipe"} key={index}>
-                                            <Link to={{pathname: '/instructions', item: item}}>
-                                            <img className={'recipe-img'} src={item.img} alt={item.title} />
-                                            <h1 className={'recipe-title'}>{item.title}</h1>
-                                            </Link>
-                                        </div>
-                                    )
-                                }
-                            )
-                        : <br />}
                     </Jumbotron>
                 </div>
             </Container>
