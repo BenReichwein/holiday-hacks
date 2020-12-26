@@ -1,6 +1,6 @@
 module.exports = {
     food: function (){
-        return 'd1c8dbd0de3f45a7a85910d0c75ae55c';
+        return '17e2f6a0aa894da5abafef7a9abbd3c3';
         //82dcf2c72fbe4c4eb58964d820e2430b
         //6b9ed39aa4184083bd5592d062cf2151
         //6dddf62b15e744be95879a02fb3f57a5
@@ -15,9 +15,6 @@ module.exports = {
 
 
         //BRAND NEW
-        // b28a830c7f8b40e1bc168b075ed5d0b0
-        //17e2f6a0aa894da5abafef7a9abbd3c3
-        //17e2f6a0aa894da5abafef7a9abbd3c3
         //0d874d97b0eb434593fc808f3f20329a
         //ab9b5a99cc714526afa18a903efb3e10
         //7102ee7926e6489499e6f506e20d8319
