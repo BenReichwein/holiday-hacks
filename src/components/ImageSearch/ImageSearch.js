@@ -93,7 +93,7 @@ class ImageSearch extends Component {
                                 {foodResults === true ?
                                     food.map((item, index) => {
                                             return (
-                                                <div className={"recipe"} key={index}>
+                                                <div className={"recipe1"} key={index}>
                                                     <Link to={{pathname: '/instructions', item: item,}}>
                                                     <h1 className={'recipe-title'}>{item.title}</h1>
                                                         <div className='gradient'>

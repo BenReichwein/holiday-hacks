@@ -50,7 +50,7 @@ class Home extends Component {
     render() {
         let {food, loading} = this.state
         return (
-            <Container fluid>
+            <Container fluid className='home-container'>
                 <h1 className='title'>RECIPES</h1>
                 <Container style={{marginTop: '1rem', marginBottom: 25}}>
                     <input
