@@ -75,8 +75,8 @@ class ImageSearch extends Component {
                     <h3 className='image-search-title'>Upload or drag an image into the box below.</h3>
                     <form className='form' style={{marginBottom: 30}}>
                         <div className="image-upload">
-                        <label for="uploaded">
-                            <i id='upload-image' className="fas fa-upload"></i>
+                        <label for="uploaded" style={{cursor: "pointer"}}>
+                            <i id='upload-image' className="fas fa-upload"/>
                         </label>
                         <input className='upload-file' onChange={this.handleChange} id='uploaded' type='file' accept="image/png, image/jpeg"/>
                         </div>                        

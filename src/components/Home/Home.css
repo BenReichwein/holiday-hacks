@@ -49,7 +49,7 @@ a:hover {
   left:0; top:0;
   width:100%; height:100%;
   display:inline-block;
-  background: linear-gradient(to top, #285B52, rgb(40 91 82 / 50%), transparent, transparent);
+  background: linear-gradient(to top, #285B52, rgb(40 91 82 / 10%), transparent, transparent);
 }
 
 .gradient:hover:after{
