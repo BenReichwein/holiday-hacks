@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Container, Jumbotron} from "react-bootstrap";
+import {Container, Jumbotron} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import '@tensorflow/tfjs';
 
@@ -33,17 +33,11 @@ class ImageSearch extends Component {
     }
 
     app = async () => {
-        if (this.state.image) {
-            this.setState({loading: true})
+        this.setState({loading: true})
         const img = document.getElementById('img');
 
         net = await mobilenet.load();
-
         return await net.classify(img);
-        } else {
-            alert('No image uploaded')
-            window.location.reload()
-        }
     }
 
     recipeLoad = () => {
@@ -55,6 +49,21 @@ class ImageSearch extends Component {
                     foodResults: true,
                 });
             })
+    }
+
+    componentDidUpdate() {
+        if (this.state.image !== null || "") {
+            console.log("in")
+            this.app().then(value => {
+                this.setState({
+                    loading: false, 
+                    result: {'name': value[0]['className'], 'prob': value[0]['probability']},
+                    search: value[0]['className'],
+                    })
+                    this.recipeLoad();
+            })
+            this.setState({image: null})
+        }
     }
 
 
@@ -69,15 +78,6 @@ class ImageSearch extends Component {
                     <form style={{marginBottom: 30}}>
                         <input onChange={this.handleChange} id='uploaded' type='file' accept="image/png, image/jpeg"/>
                     </form>
-                    <Button size="lg" block onClick={() => this.app().then(value => {
-                        this.setState({
-                            loading: false, 
-                            result: {'name': value[0]['className'], 'prob': value[0]['probability']},
-                            search: value[0]['className'],
-                            })
-                            this.recipeLoad();
-                    })}
-                            variant="primary">Search</Button>
                     <Jumbotron style={{'marginTop': 50}}>
                         {loading ?
                             <p>Loading...</p>
