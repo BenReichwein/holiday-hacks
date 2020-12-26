@@ -2,6 +2,11 @@
     margin-top: 2rem;
 }
 
+.recipe{
+    display: flex;
+    justify-content: center;
+}
+
 .image-search-title {
     display: flex;
     margin-top: .5em;
@@ -54,7 +59,7 @@ button.btn.btn-primary.btn-block.btn-lg:hover {
     border-color: #285B52;
     background-color: #59B49B;
     height: 5rem;
-    padding: 10rem;
+    padding: 5rem;
 }
 
 #uploaded {
