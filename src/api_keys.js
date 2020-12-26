@@ -15,8 +15,5 @@ module.exports = {
 
 
         //BRAND NEW
-        //b9588bd9a2bf41b1914866ef578b9d00
-        //c936423c5f7a43028b7cefaabc23a4aa
-        //9b6ea789e4fe4549b473b4a88e9e625e
     }
 }

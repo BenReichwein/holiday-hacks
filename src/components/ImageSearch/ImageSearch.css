@@ -1,0 +1,103 @@
+.container {
+    margin-top: 2rem;
+}
+
+.image-search-title {
+    display: flex;
+    margin-top: .5em;
+    justify-content: center;
+    color: #285B52;
+}
+
+.image-upload {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin: auto;
+    height: 50%;
+    width: 25%;
+    border-radius: 5px;
+}
+
+button.btn.btn-primary.btn-block.btn-lg {
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    background-color: #285B52;
+    border-color: #59B49B;
+}
+
+button.btn.btn-primary.btn-block.btn-lg:hover {
+    transition: .3s;
+    background-color: #59B49B;
+    color: #285B52;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+.identifier p {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5em;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 5px;
+    border-color: #285B52;
+    background-color: #59B49B;
+    height: 5rem;
+    padding: 10rem;
+}
+
+#uploaded {
+    margin-left: 6em;
+    padding: 50px 50px 50px 50px  ;
+}
+
+.lds-ring {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid black;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: black transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+

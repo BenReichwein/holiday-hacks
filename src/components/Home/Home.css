@@ -1,61 +1,97 @@
 .recipe {
-    background: linear-gradient(90deg, rgb(196, 57, 33) 0%, rgb(240, 84, 72) 100%);;
-    color: whitesmoke;
-    text-align: left;
-    margin: 35px auto; /* 5% from the top, 15% from the bottom and centered */
-    width: 80%; /* Could be more or less, depending on screen size */
-    height: 100%;
-    border-radius: 8px;
-    border-color: #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0,
-    0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    animation: bounceIn ease 1s;
+  margin: 30px 30px 30px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: space-around;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: 100px;
+}
+.jumbotron {
+  margin-top: 0;
+  padding: 0;
+}
+.title {
+  font-family: 'Oswald';
+  color: #285B52;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .recipe-title {
-    color: white;
-    font-size: 24px;
-    text-align: center;
-    cursor: pointer;
-    padding-top: 2%;
+  color:#fff;
+  font-size: 22px;
+  white-space: nowrap; 
+  max-width: 328px;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  text-align: center;
+  font-family: 'Oswald';
+  text-transform: uppercase;
+  background-color: #285B52;
+  height: 2rem;
 }
 
 .recipe-img {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 8px;
-    display: block;
-    margin: auto;
+  border: 8px solid #285B52;
 }
 
 .recipe-instructions {
-    display: flex;
-    justify-content: center;
-    background: transparent;
-    color: white;
-    border: none;
-    font-size: 45px;
-    padding-bottom: 10px;
-
-
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 45px;
+  padding-bottom: 10px;
 }
 
 .recipe-instructions:hover {
-    transition: all 0.3s ease-out;
-    font-size: 50px;
-    color: #217947;
-    transition: 250ms;
+  transition: all 0.3s ease-out;
+  font-size: 50px;
+  color: #217947;
+  transition: 250ms;
 }
 
 .search-bar {
-    border-radius: 8px;
-    width: 80%;
-    margin: auto;
+  border-radius: 5px;
+  width: 55%;
+  height: 50px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #59B49B;
+  border: 2px solid #285B52;
 }
 
-/* Desktop top view */
-@media screen and (min-width: 900px) {
-    .recipe {
-        width: 500px;
-    }
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid black;
+  border-color: black transparent black transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

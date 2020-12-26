@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import './NavBar.css'
-
+import logo from './logo.png'
 class Navbar extends Component {
     render() {
         return(
             <nav className="NavbarItems">
-                <a href={"/"} style={{textDecoration : "none"}}><h1 className="navbar-logo">RECIPE <i class="fas fa-utensils"/></h1></a>
+                <a href={"/"} style={{textDecoration : "none"}}><img alt='logo' className="navbar-logo" src={logo}></img></a>
                 <ul className={'nav-menu'}>
                     <li>
-                        <a className={'nav-links'} href={'/'}>
-                            <i className="fas fa-home"/>
-                        </a>
-                        <a className={'nav-links'} href={'/imagesearch'}>
-                            <i className="fas fa-camera-retro"/>
-                        </a>
+                        <a className={'nav-links'} href={'/'}>RECIPES</a>
+                        <a className={'nav-links'} href={'/imagesearch'}>UPLOAD</a>
                     </li>
                 </ul>
             </nav>

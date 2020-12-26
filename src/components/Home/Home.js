@@ -49,24 +49,24 @@ class Home extends Component {
         let {food, loading} = this.state
         return (
             <Container fluid>
-                <Container style={{marginTop: 25, marginBottom: 25}}>
+                <h1 className='title'>RECIPES</h1>
+                <Container style={{marginTop: '1rem', marginBottom: 25}}>
             <input
                     className="search-bar"
                     type="text"
-                    placeholder='Search Recipe by word or ingredients like (sugar, flour)'
+                    placeholder='   Search Recipe by word or ingredients like (sugar, flour)            🔍'
                     onChange={this.recipeSearch} />
                     </Container>
                 <Jumbotron>
                     <Row>
                         {loading ?
-                            <p style={{margin: "auto"}}>Loading...</p>
+                            <div className="lds-dual-ring"></div>
                             : food.map((item, index) => {
                                     return (
                                         <div className={"recipe"} key={index}>
                                             <Link to={{pathname: '/instructions', item: item,}}>
+                                                <img className={'recipe-img'} src={item.img} alt={item.title}/>
                                                 <h1 className={'recipe-title'}>{item.title}</h1>
-                                                {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                                                <img className={'recipe-img'} src={item.img}/>
                                             </Link>
                                         </div>
                                     )
@@ -74,7 +74,7 @@ class Home extends Component {
                             )
                         }
                         {food.length === 0 && loading === false ?
-                        <p style={{margin: "auto"}}>No Recipes for "{this.state.search}"</p>
+                        <p style={{margin: "auto"}}>No Recipes for {this.state.search}</p>
                         : <p></p>}
                     </Row>
                 </Jumbotron>
