@@ -65,7 +65,6 @@ class ImageSearch extends Component {
     render() {
         let {name, prob} = this.state.result;
         let {food, foodResults, loading} = this.state;
-        console.log(loading)
         return (
             <Container>
                 <div className='container'>

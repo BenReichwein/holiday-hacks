@@ -1,19 +1,7 @@
 .recipe {
-  margin: 30px 30px 30px 30px;
-  display: flex;
-  justify-content: center;
+  margin: 30px auto;
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: 100px;
-}
-.jumbotron {
-  margin-top: 0;
-  padding: 0;
-}
 .title {
   font-family: 'Oswald';
   color: #285B52;
@@ -41,16 +29,6 @@
   border: 8px solid #285B52;
 }
 
-.recipe-instructions {
-  display: flex;
-  justify-content: center;
-  background: transparent;
-  color: white;
-  border: none;
-  font-size: 45px;
-  padding-bottom: 10px;
-}
-
 .recipe-instructions:hover {
   transition: all 0.3s ease-out;
   font-size: 50px;
@@ -71,22 +49,18 @@
 }
 
 .lds-dual-ring {
-  display: inline-block;
-  width: 80px;
-  height: 80px;
-  margin: auto;
-}
-.lds-dual-ring:after {
-  content: " ";
+  box-sizing: border-box;
   display: block;
+  position: absolute;
   width: 64px;
   height: 64px;
-  margin: 8px;
+  margin: auto;
+  border: 8px solid black;
   border-radius: 50%;
-  border: 6px solid black;
-  border-color: black transparent black transparent;
-  animation: lds-dual-ring 1.2s linear infinite;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: black transparent transparent transparent;
 }
+
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);
