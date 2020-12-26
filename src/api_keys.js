@@ -1,9 +1,5 @@
 module.exports = {
     food: function (){
-<<<<<<< HEAD
-        return 'b28a830c7f8b40e1bc168b075ed5d0b0';
-        //b28a830c7f8b40e1bc168b075ed5d0b0
-=======
         return 'd1c8dbd0de3f45a7a85910d0c75ae55c';
         //82dcf2c72fbe4c4eb58964d820e2430b
         //6b9ed39aa4184083bd5592d062cf2151
@@ -19,6 +15,12 @@ module.exports = {
 
 
         //BRAND NEW
->>>>>>> 2092ff0d1dbc5e3e61d07bee770fe7831780852f
+        // b28a830c7f8b40e1bc168b075ed5d0b0
+        //17e2f6a0aa894da5abafef7a9abbd3c3
+        //17e2f6a0aa894da5abafef7a9abbd3c3
+        //0d874d97b0eb434593fc808f3f20329a
+        //ab9b5a99cc714526afa18a903efb3e10
+        //7102ee7926e6489499e6f506e20d8319
+        //6e27c46922264bfeb0e1dc6fc11c93fb
     }
 }

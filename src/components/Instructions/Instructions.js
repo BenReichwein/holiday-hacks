@@ -36,7 +36,7 @@ class Instructions extends Component {
                 }
             }
             return (
-                <Container>
+                <Container className='directions-container'>
                     <div className={'instructions'}>
                     <i className="fas fa-long-arrow-alt-left" onClick={() => this.props.history.goBack()}> Back</i>
                         <Card className="instructions-card">
