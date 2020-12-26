@@ -40,7 +40,8 @@ class Home extends Component {
 
     recipeSearch = (e) => {
         this.setState({
-            search: [e.target.value.toLowerCase()]
+            search: [e.target.value.toLowerCase()],
+            loading: true,
         })
         this.recipeLoad();
     }
