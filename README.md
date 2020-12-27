@@ -17,6 +17,3 @@ npm install
 * [Ben Reichwein](https://github.com/BenReichwein)
 * [Christian Stefaniw](https://github.com/ChristianStefaniw)
 * [Ian Gelfand](https://github.com/IanGelfand)
-
-## Try it
-https://recipe-hack.herokuapp.com/
